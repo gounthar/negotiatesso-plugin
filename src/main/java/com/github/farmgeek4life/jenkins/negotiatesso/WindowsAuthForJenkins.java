@@ -103,13 +103,6 @@ public class WindowsAuthForJenkins extends WindowsAuthProviderImpl {
                         userDetails.getPassword(),
                         userDetails.getAuthorities());
         ACL.impersonate(authToken);
-        if (Jenkins.getVersion().isNewerThan(new VersionNumber("1.568"))) {
-            try {
-                Method fireLoggedIn = SecurityListener.class.getMethod("fireLoggedIn", String.class);
-                fireLoggedIn.invoke(null, userDetails.getUsername());
-            } catch (Exception e) {
-                LOGGER.log(Level.WARNING, "Failed to invoke fireLoggedIn method {0}", e);
-            }
-        }
+        SecurityListener.fireLoggedIn(userDetails.getUsername());
     }
 }
