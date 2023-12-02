@@ -3,15 +3,14 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.49</version><!-- which version of Jenkins plugin pom is this plugin built against? -->
+    <version>4.51</version><!-- which version of Jenkins plugin pom is this plugin built against? -->
     <relativePath />
   </parent>
 
   <properties>
     <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/negotiatesso-plugin</gitHubRepo>
-    <jenkins.version>2.266</jenkins.version>
-    <java.level>8</java.level>
+    <jenkins.version>2.346.3</jenkins.version>
     <waffle.version>2.0.0</waffle.version>
     <jna.version>5.3.1</jna.version>
     <slf4j.version>2.0.0-alpha0</slf4j.version><!-- Upgraded over jenkins requirement because of Waffle -->
@@ -61,7 +60,6 @@
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
-      <version>${jna.version}</version>
     </dependency>
     <dependency>
       <groupId>net.java.dev.jna</groupId>
@@ -71,17 +69,14 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>${slf4j.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-jdk14</artifactId>
-      <version>${slf4j.version}</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
